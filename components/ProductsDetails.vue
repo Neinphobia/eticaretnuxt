@@ -8,10 +8,15 @@
             <div class="p-7">
                 <h2 class="text-4xl my-7">{{product.title}}</h2>
                 <p class="text-xl my-7 ">Fiyatı - $ {{product.price}}</p>
+                <p class="mb-4">Türk lirası Karşılığı: <span class="font-bold">{{karsilik}} ₺</span></p>
                 <h3 class="font-bold border-b-2 mb-4 pb-2">
                     Ürün ayrıntıları:
                 </h3>
                 <p class="mb-7">{{product.description}}</p>
+                <button class="btn flex">
+                    <i class="material-icons mr-2">add_shopping_cart</i>
+                    <span>Sepete Ekle</span>
+                </button>
             </div>
         </div>
     </div>
@@ -21,6 +26,17 @@
 
 
     const {product } = defineProps(['product'])
+    
+    
+    let dolar_
+    const api_url ='http://www.floatrates.com/daily/try.json'
+    let dolarkuru = await fetch(api_url)
+    dolar_=await dolarkuru.json()
+    let dolar_try = dolar_.usd.inverseRate
+    
+    let karsilik = product.price * dolar_try
+    
+
 </script>
 
 <style  scoped>

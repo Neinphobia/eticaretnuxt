@@ -6,13 +6,22 @@
             <p class="btn my-4 hover:bg-gradient-to-r from-yellow-100 to-blue-90">Detaylar</p>
             <p class="my-4 font-bold bg-gradient-to-r from-yellow-120 to-blue-300 p-2 rounded-md">{{product.category}}</p>
             <p class="pricetag my-4 bg-gray-700">{{product.price}} $</p>
+          
         </NuxtLink>
     </div>
 </template>
 
 <script setup>
 
+
+    
+
     const { product } = defineProps(['product'])
+
+
+    
+
+
 </script>
 
 <style  scoped>
