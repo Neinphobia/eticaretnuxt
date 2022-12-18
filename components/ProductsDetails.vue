@@ -26,13 +26,10 @@
 
 
     const {product } = defineProps(['product'])
-    
-    
-    let dolar_
     const api_url ='http://www.floatrates.com/daily/try.json'
-    let dolarkuru = await fetch(api_url)
-    dolar_=await dolarkuru.json()
-    let dolar_try = dolar_.usd.inverseRate
+    const {data } = await useFetch(api_url)
+    
+    let dolar_try = data.value.usd.inverseRate 
     
     let karsilik = product.price * dolar_try
     
