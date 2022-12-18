@@ -11,7 +11,7 @@
 
 <script setup>
 // let dolar_
- const api_url ='http://www.floatrates.com/daily/try.json'
+ const api_url ='https://www.floatrates.com/daily/try.json'
 // let dolarkuru = await fetch(api_url)
 // dolar_=await dolarkuru.json()
 // const dolar_try = dolar_.usd.inverseRate
